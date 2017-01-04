@@ -1,0 +1,12 @@
+{
+    "name": "burel/site",
+    "require": {
+        "oscarotero/inline-svg": "^2.0"
+    },
+    "authors": [
+        {
+            "name": "jorgepcbraz",
+            "email": "jorgepcbraz@gmail.com"
+        }
+    ]
+}
