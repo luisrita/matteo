@@ -15,7 +15,8 @@ function my_init_method() {
 		wp_deregister_script( 'jquery' );
 		wp_deregister_script( 'wp-embed' );
 
-		wp_enqueue_script( 'jquery', get_template_directory_uri()."/assets/javascript/main.min.js", '', '', 'true');
+		wp_register_script( 'jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js', false, '2.1.4' );
+		wp_enqueue_script( 'main', get_template_directory_uri()."/assets/javascript/main.min.js", array( 'jquery' ), '1', 'true' );	
 
 	}
 }

@@ -22,64 +22,21 @@ PROJECT.MAIN = (function () {
 				}
 			});
 
-			window.requestAnimFrame = (function(){
-				return  window.requestAnimationFrame       ||
-								window.webkitRequestAnimationFrame ||
-								window.mozRequestAnimationFrame    ||
-								function( callback ){
-									window.setTimeout(callback, 1000 / 60);
-								};
-			})();
-			
-			function responsiveMenu() {
-				$('.js-nav-menu').on('click', function(e) {
-					e.preventDefault();
-					$('.js-top-menu').addClass('active');
-				});
-
-				$('.js-close').on('click', function(e) {
-					e.preventDefault();
-					$('.js-top-menu').removeClass('active');
-				});
-
-				$('.js-mobile-search').on('click', function(e) {
-					e.preventDefault();
-					$(this).toggleClass('active');
-					$('.js-search-field').toggleClass('active');
-				});
-
-				$('.wrap').prev('a').on('click', function(e) {
-					e.preventDefault();
-					$(this).next().toggleClass('active');
-				});
-			}
-
-			if( $(window).width() < 1366 ) {
-				responsiveMenu();
-			}
-
-			$(window).on('resize', function() {
-				if( $(window).width() < 1366 ) {
-					responsiveMenu();
-				} else {
-					$('.js-nav-menu').unbind('click');
-					$('.js-close').unbind('click');
-					$('.js-mobile-search').unbind('click');
-					$('.wrap').prev('a').unbind('click');
-				}
+			$('.js-prev').on('click', function(e) {
+				e.preventDefault();
+				console.log('yo!');
 			})
-			
 		}
 	};
 })();
 
 function ready(fn) {
-		if (document.readyState != 'loading'){
-				console.log('start');
-				PROJECT.MAIN.init();
-		} else {
-				document.addEventListener('DOMContentLoaded', fn);
-		}
+	if (document.readyState != 'loading'){
+		console.log('start');
+		PROJECT.MAIN.init();
+	} else {
+		document.addEventListener('DOMContentLoaded', fn);
+	}
 }
 
 ready(PROJECT.MAIN.init);
