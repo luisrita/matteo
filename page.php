@@ -19,6 +19,7 @@ get_header();
     'post_status' =>'publish'
   );
   $query = new WP_Query( $args );
+  $k = 0;
 ?>
 
 <?php if ($query->have_posts()): ?>
@@ -26,16 +27,23 @@ get_header();
     <?php while($query->have_posts()): ?>
       <?php global $post; ?>
       <?php $query->the_post(); ?>
-
-      <li class="project">
+      <?php 
+        $k === 0 ? $activeClass = 'active' : $activeClass = ''
+      ?>
+      <li class="project <?php echo $activeClass ?>">
         <figure class="project__image">
           <img src="<?php the_field('image'); ?>" />
         </figure>
-        <h3 class="project__title"><?php echo $post->post_title; ?></h3>
-        <p class="project__description"><?php echo $post->post_content; ?></p>
+        <div class="project__details">
+          <h3 class="project__title"><?php echo $post->post_title; ?></h3>
+          <p class="project__description"><?php echo $post->post_content; ?></p>
+        </div>
       </li>
 
-    <?php endwhile; ?>
+    <?php 
+      $k++; 
+      endwhile; 
+    ?>
     <a href="#" class="project__nav project__nav--prev js-prev"></a>
     <a href="#" class="project__nav project__nav--next js-next"></a>
   </ul>
