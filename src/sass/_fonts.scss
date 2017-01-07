@@ -1,0 +1,39 @@
+/*------------------------------------*\
+//    #JAMSON BEER - FONTS
+\*------------------------------------*/
+
+@font-face {
+    font-family: 'AvantGarde-Demi';
+    src: url('../fonts/AvantGarde-Demi.eot');
+    src: url('../fonts/AvantGarde-Demi.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/AvantGarde-Demi.woff2') format('woff2'),
+         url('../fonts/AvantGarde-Demi.woff') format('woff'),
+         url('../fonts/AvantGarde-Demi.ttf') format('truetype'),
+         url('../fonts/AvantGarde-Demi.svg#AvantGarde-Demi') format('svg');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AvantGarde-ExtraLight';
+    src: url('../fonts/AvantGarde-ExtraLight.eot');
+    src: url('../fonts/AvantGarde-ExtraLight.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/AvantGarde-ExtraLight.woff2') format('woff2'),
+         url('../fonts/AvantGarde-ExtraLight.woff') format('woff'),
+         url('../fonts/AvantGarde-ExtraLight.ttf') format('truetype'),
+         url('../fonts/AvantGarde-ExtraLight.svg#AvantGarde-ExtraLight') format('svg');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AvantGarde-Book';
+    src: url('../fonts/AvantGarde-Book-Bold.eot');
+    src: url('../fonts/AvantGarde-Book-Bold.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/AvantGarde-Book-Bold.woff2') format('woff2'),
+         url('../fonts/AvantGarde-Book-Bold.woff') format('woff'),
+         url('../fonts/AvantGarde-Book-Bold.ttf') format('truetype'),
+         url('../fonts/AvantGarde-Book-Bold.svg#AvantGarde-Book-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
