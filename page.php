@@ -30,7 +30,7 @@ get_header();
       <?php 
         $k === 0 ? $activeClass = 'active' : $activeClass = ''
       ?>
-      <li class="project <?php echo $activeClass ?>">
+      <li class="js-item project <?php echo $activeClass ?>">
         <figure class="project__image">
           <img src="<?php the_field('image'); ?>" />
         </figure>
@@ -44,8 +44,8 @@ get_header();
       $k++; 
       endwhile; 
     ?>
-    <a href="#" class="project__nav project__nav--prev js-prev"></a>
-    <a href="#" class="project__nav project__nav--next js-next"></a>
+    <a href="#" class="project__nav project__nav--prev js-btn js-prev"></a>
+    <a href="#" class="project__nav project__nav--next js-btn js-next"></a>
   </ul>
 <?php endif; ?>
 

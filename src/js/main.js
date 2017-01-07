@@ -22,9 +22,29 @@ PROJECT.MAIN = (function () {
 				}
 			});
 
-			$('.js-prev').on('click', function(e) {
+			$('.js-btn').on('click', function(e) {
 				e.preventDefault();
-				console.log('yo!');
+				var currentItem = $('.js-item.active');
+					
+				$(currentItem).removeClass('active');
+
+				if ( $(this).hasClass('js-prev') ) {
+
+					if ( $(currentItem).prev().length !== 0 ) {
+						$(currentItem).prev().addClass('active');
+					} else {
+						$('.js-item').last().addClass('active');
+					}
+
+				} else {
+
+					if ( $(currentItem).next('.js-item').length !== 0 ) {
+						$(currentItem).next().addClass('active');
+					} else {
+						$('.js-item').first().addClass('active');
+					}
+					
+				}
 			})
 		}
 	};
