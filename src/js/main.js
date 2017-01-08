@@ -24,7 +24,8 @@ PROJECT.MAIN = (function () {
 
 			$('.js-btn').on('click', function(e) {
 				e.preventDefault();
-				var currentItem = $('.js-item.active');
+				var currentItem = $('.js-item.active'),
+						index;
 					
 				$(currentItem).removeClass('active');
 
@@ -32,19 +33,25 @@ PROJECT.MAIN = (function () {
 
 					if ( $(currentItem).prev().length !== 0 ) {
 						$(currentItem).prev().addClass('active');
+						index = $(currentItem).prev().index() + 1
 					} else {
 						$('.js-item').last().addClass('active');
+						index = $('.js-item').last().index() + 1
 					}
 
 				} else {
 
 					if ( $(currentItem).next('.js-item').length !== 0 ) {
 						$(currentItem).next().addClass('active');
+						index = $(currentItem).next().index() + 1
 					} else {
 						$('.js-item').first().addClass('active');
+						index = $('.js-item').first().index() + 1
 					}
 					
 				}
+
+				$('.js-item-num').text(index);
 			})
 		}
 	};

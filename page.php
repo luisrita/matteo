@@ -19,16 +19,18 @@ get_header();
     'post_status' =>'publish'
   );
   $query = new WP_Query( $args );
-  $k = 0;
+  $k = 1;
 ?>
 
 <?php if ($query->have_posts()): ?>
+  <p class="project__counter">
+    <span class="js-item-num">1</span> of <?php echo $query->post_count ?>
+  </p>
   <ul class="projects-wrapper">
     <?php while($query->have_posts()): ?>
-      <?php global $post; ?>
       <?php $query->the_post(); ?>
       <?php 
-        $k === 0 ? $activeClass = 'active' : $activeClass = ''
+        $k === 1 ? $activeClass = 'active' : $activeClass = ''
       ?>
       <li class="js-item project <?php echo $activeClass ?>">
         <figure class="project__image">

@@ -27,6 +27,7 @@
     position: absolute;
     top: 50%;
     left: 50%;
+    max-width: 100%;
     transform: translate(-50%, -50%);
   }
 }
@@ -48,7 +49,6 @@
 .project__description {
   display: inline-block;
   width: 420px;
-  // font-weight: 600;
 }
 
 .project__nav {
@@ -66,4 +66,12 @@
 
 .project__nav--next {
   right: 0;
+}
+
+.project__counter {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  z-index: 2;
+  transform: translateX(-50%);
 }
