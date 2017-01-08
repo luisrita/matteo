@@ -37,7 +37,13 @@ get_header();
           <img src="<?php the_field('image'); ?>" />
         </figure>
         <div class="project__details">
-          <h3 class="project__title"><?php echo $post->post_title; ?></h3>
+          <div class="project__title">
+            <?php if (get_field('logo')) { ?>
+              <img src="<?php the_field('logo'); ?>" />
+            <?php } else { ?>
+              <h3><?php echo $post->post_title; ?></h3>
+            <?php }; ?>
+          </div>
           <p class="project__description"><?php echo $post->post_content; ?></p>
         </div>
       </li>
